@@ -11,7 +11,7 @@ namespace IEXTrading.Infrastructure.IEXTradingHandler
 {
     public class IEXHandler
     {
-        static string BASE_URL = "https://api.iextrading.com/1.0/"; //This is the base URL, method specific URL is appended to this.
+        static string BASE_URL = "https://api.iextrading.com/1.0/"; // This is the base URL, method specific URL is appended to this.
         HttpClient httpClient;
 
         public IEXHandler()
@@ -41,10 +41,15 @@ namespace IEXTrading.Infrastructure.IEXTradingHandler
             if (!companyList.Equals(""))
             {
                 companies = JsonConvert.DeserializeObject<List<Company>>(companyList);
+<<<<<<< HEAD
                 companies = companies.Where(c => c.isEnabled && c.type != "N/A").ToList();
                 //companies = companies.GetRange(0, 9);
+=======
+                companies = companies.Where(c => c.isEnabled).ToList();
+                // companies = companies.GetRange(0, 9);
+>>>>>>> daf6bcbcb886ed61601cb4764a3eab888f1e648b
             }
-            return companies;
+            return companies;//returns values
         }
 
         public Dictionary<String, Dictionary<String, Quote>> GetQuotes(List<Company> companies)
@@ -102,14 +107,14 @@ namespace IEXTrading.Infrastructure.IEXTradingHandler
         ****/
         public List<Equity> GetChart(string symbol)
         {
-            //Using the format method.
-            //string IEXTrading_API_PATH = BASE_URL + "stock/{0}/batch?types=chart&range=1y";
-            //IEXTrading_API_PATH = string.Format(IEXTrading_API_PATH, symbol);
+            // Using the format method.
+            // string IEXTrading_API_PATH = BASE_URL + "stock/{0}/batch?types=chart&range=1y";
+            // IEXTrading_API_PATH = string.Format(IEXTrading_API_PATH, symbol);
 
             string IEXTrading_API_PATH = BASE_URL + "stock/" + symbol + "/batch?types=chart&range=1y";
 
             string charts = "";
-            List<Equity> Equities = new List<Equity>();
+            List<Equity> Equities = new List<Equity>();//initialization
             httpClient.BaseAddress = new Uri(IEXTrading_API_PATH);
             HttpResponseMessage response = httpClient.GetAsync(IEXTrading_API_PATH).GetAwaiter().GetResult();
             if (response.IsSuccessStatusCode)
@@ -121,7 +126,7 @@ namespace IEXTrading.Infrastructure.IEXTradingHandler
                 ChartRoot root = JsonConvert.DeserializeObject<ChartRoot>(charts, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
                 Equities = root.chart.ToList();
             }
-            //make sure to add the symbol the chart
+            // make sure to add the symbol the chart
             foreach (Equity Equity in Equities)
             {
                 Equity.symbol = symbol;
