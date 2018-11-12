@@ -75,7 +75,7 @@ namespace IEXTrading.Infrastructure.IEXTradingHandler
                     if (!string.IsNullOrEmpty(responseData))
                     {
                         quotes = JsonConvert.DeserializeObject<Dictionary<String, Dictionary<String, Quote>>>(responseData);
-                        quotes = quotes.Where(c => c.Value?.FirstOrDefault().Value?.week52High > c.Value?.FirstOrDefault().Value?.week52Low && c.Value?.FirstOrDefault().Value?.companyName.Length > 0 && c.Value?.FirstOrDefault().Value?.avgTotalVolume > 39000000).ToDictionary(x => x.Key, y => y.Value);
+                        quotes = quotes.Where(c => c.Value?.FirstOrDefault().Value?.week52High > c.Value?.FirstOrDefault().Value?.week52Low && c.Value?.FirstOrDefault().Value?.companyName.Length > 0 && c.Value?.FirstOrDefault().Value?.avgTotalVolume > 30000000).ToDictionary(x => x.Key, y => y.Value);
                         skipCount += 100;
                         companiesQuote = companiesQuote.Concat(quotes).ToDictionary(x => x.Key, y => y.Value);
                     }
