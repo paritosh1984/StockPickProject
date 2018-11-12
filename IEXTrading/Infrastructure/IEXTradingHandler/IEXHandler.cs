@@ -41,13 +41,8 @@ namespace IEXTrading.Infrastructure.IEXTradingHandler
             if (!companyList.Equals(""))
             {
                 companies = JsonConvert.DeserializeObject<List<Company>>(companyList);
-<<<<<<< HEAD
-                companies = companies.Where(c => c.isEnabled && c.type != "N/A").ToList();
-                //companies = companies.GetRange(0, 9);
-=======
+
                 companies = companies.Where(c => c.isEnabled).ToList();
-                // companies = companies.GetRange(0, 9);
->>>>>>> daf6bcbcb886ed61601cb4764a3eab888f1e648b
             }
             return companies;//returns values
         }
