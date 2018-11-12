@@ -13327,11 +13327,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\umara\\Google Drive\\Coursework\\6225 - Distributed Info System\\Projects\\Repos\\2018_Fall_Assignment4_ActiveCloudSite-master\\IEXTrading\\IEXTrading.csproj",
+      "projectUniqueName": "C:\\Users\\umara\\Google Drive\\Coursework\\6225 - Distributed Info System\\Projects\\Repos\\2018_Project\\StockPickProject\\IEXTrading\\IEXTrading.csproj",
       "projectName": "IEXTrading",
-      "projectPath": "C:\\Users\\umara\\Google Drive\\Coursework\\6225 - Distributed Info System\\Projects\\Repos\\2018_Fall_Assignment4_ActiveCloudSite-master\\IEXTrading\\IEXTrading.csproj",
+      "projectPath": "C:\\Users\\umara\\Google Drive\\Coursework\\6225 - Distributed Info System\\Projects\\Repos\\2018_Project\\StockPickProject\\IEXTrading\\IEXTrading.csproj",
       "packagesPath": "C:\\Users\\umara\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\umara\\Google Drive\\Coursework\\6225 - Distributed Info System\\Projects\\Repos\\2018_Fall_Assignment4_ActiveCloudSite-master\\IEXTrading\\obj\\",
+      "outputPath": "C:\\Users\\umara\\Google Drive\\Coursework\\6225 - Distributed Info System\\Projects\\Repos\\2018_Project\\StockPickProject\\IEXTrading\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
