@@ -41,7 +41,7 @@ namespace IEXTrading.Infrastructure.IEXTradingHandler
             if (!companyList.Equals(""))
             {
                 companies = JsonConvert.DeserializeObject<List<Company>>(companyList);
-                companies = companies.Where(c => c.isEnabled).ToList();
+                companies = companies.Where(c => c.isEnabled && c.type != "N/A").ToList();
                 //companies = companies.GetRange(0, 9);
             }
             return companies;
@@ -56,15 +56,16 @@ namespace IEXTrading.Infrastructure.IEXTradingHandler
             {
                 if (skipCount <= companies.Count())
                 {
-
-                    foreach (var company in companies.Skip(skipCount).Take(100))
-                    {
-                        symbols = symbols + company.symbol + ",";
-                    }
+                    symbols = string.Join(",", companies.Skip(skipCount).Take(100).Select(c => c.symbol).ToArray());
+                    //foreach (var company in companies.Skip(skipCount).Take(100))
+                    //{
+                    //    symbols = symbols + company.symbol + ",";
+                    //}
 
                     string IEXTrading_API_PATH = BASE_URL + "stock/market/batch?symbols=" + symbols + "&types=quote";
                     string responseData = "";
                     Dictionary<string, Dictionary<String, Quote>> quotes = null;
+                    //Dictionary<string, Quote> quotesDict = new Dictionary<string, Quote>();
                     HttpResponseMessage response = httpClient.GetAsync(IEXTrading_API_PATH).GetAwaiter().GetResult();
                     if (response.IsSuccessStatusCode)
                     {
@@ -74,7 +75,7 @@ namespace IEXTrading.Infrastructure.IEXTradingHandler
                     if (!string.IsNullOrEmpty(responseData))
                     {
                         quotes = JsonConvert.DeserializeObject<Dictionary<String, Dictionary<String, Quote>>>(responseData);
-                        quotes = quotes.Where(c => c.Value?.FirstOrDefault().Value?.week52High - c.Value?.FirstOrDefault().Value?.week52Low > 0 && c.Value?.FirstOrDefault().Value?.companyName.Length > 0).ToDictionary(x => x.Key, y => y.Value);
+                        quotes = quotes.Where(c => c.Value?.FirstOrDefault().Value?.week52High > c.Value?.FirstOrDefault().Value?.week52Low && c.Value?.FirstOrDefault().Value?.companyName.Length > 0).ToDictionary(x => x.Key, y => y.Value);
                         skipCount += 100;
                         companiesQuote = companiesQuote.Concat(quotes).ToDictionary(x => x.Key, y => y.Value);
                     }
