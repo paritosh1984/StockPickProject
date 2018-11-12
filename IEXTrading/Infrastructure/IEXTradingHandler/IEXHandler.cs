@@ -44,7 +44,7 @@ namespace IEXTrading.Infrastructure.IEXTradingHandler
                 companies = companies.Where(c => c.isEnabled).ToList();
                 // companies = companies.GetRange(0, 9);
             }
-            return companies;
+            return companies;//returns values
         }
 
         public Dictionary<String, Dictionary<String, Quote>> GetQuotes(List<Company> companies)
@@ -108,7 +108,7 @@ namespace IEXTrading.Infrastructure.IEXTradingHandler
             string IEXTrading_API_PATH = BASE_URL + "stock/" + symbol + "/batch?types=chart&range=1y";
 
             string charts = "";
-            List<Equity> Equities = new List<Equity>();
+            List<Equity> Equities = new List<Equity>();//initialization
             httpClient.BaseAddress = new Uri(IEXTrading_API_PATH);
             HttpResponseMessage response = httpClient.GetAsync(IEXTrading_API_PATH).GetAwaiter().GetResult();
             if (response.IsSuccessStatusCode)
