@@ -32,14 +32,14 @@ namespace MVCTemplate.Controllers
         ****/
         public IActionResult Symbols()
         {
-            //Set ViewBag variable first
+            // Set ViewBag variable first
             ViewBag.dbSucessComp = 0;
             IEXHandler webHandler = new IEXHandler();
             List<Company> companies = webHandler.GetSymbols();
             Dictionary<String, Dictionary<String, Quote>> companiesQuotes = webHandler.GetQuotes(companies);
 
             companies = companies.Where(c => companiesQuotes.Keys.Contains(c.symbol)).ToList();
-            //Save companies in TempData
+            // Save companies in TempData
             TempData["Companies"] = JsonConvert.SerializeObject(companies);
             TempData["CompaniesQuote"] = JsonConvert.SerializeObject(companiesQuotes);
 
@@ -61,14 +61,14 @@ namespace MVCTemplate.Controllers
         ****/
         public IActionResult Chart(string symbol)
         {
-            //Set ViewBag variable first
+            // Set ViewBag variable first
             ViewBag.dbSuccessChart = 0;
             List<Equity> equities = new List<Equity>();
             if (symbol != null)
             {
                 IEXHandler webHandler = new IEXHandler();
                 equities = webHandler.GetChart(symbol);
-                equities = equities.OrderBy(c => c.date).ToList(); //Make sure the data is in ascending order of date.
+                equities = equities.OrderBy(c => c.date).ToList(); // Make sure the data is in ascending order of date.
             }
 
             CompaniesEquities companiesEquities = getCompaniesEquitiesModel(equities);
@@ -97,8 +97,8 @@ namespace MVCTemplate.Controllers
             List<Company> companies = JsonConvert.DeserializeObject<List<Company>>(TempData["Companies"].ToString());
             foreach (Company company in companies)
             {
-                //Database will give PK constraint violation error when trying to insert record with existing PK.
-                //So add company only if it doesnt exist, check existence using symbol (PK)
+                // Database will give PK constraint violation error when trying to insert record with existing PK.
+                // So add company only if it doesnt exist, check existence using symbol (PK)
                 if (dbContext.Companies.Where(c => c.symbol.Equals(company.symbol)).Count() == 0)
                 {
                     dbContext.Companies.Add(company);
@@ -116,7 +116,7 @@ namespace MVCTemplate.Controllers
         {
             IEXHandler webHandler = new IEXHandler();
             List<Equity> equities = webHandler.GetChart(symbol);
-            //List<Equity> equities = JsonConvert.DeserializeObject<List<Equity>>(TempData["Equities"].ToString());
+            // List<Equity> equities = JsonConvert.DeserializeObject<List<Equity>>(TempData["Equities"].ToString());
             foreach (Equity equity in equities)
             {
                 if (dbContext.Equities.Where(c => c.date.Equals(equity.date)).Count() == 0)
@@ -140,13 +140,13 @@ namespace MVCTemplate.Controllers
         {
             if ("all".Equals(tableToDel))
             {
-                //First remove equities and then the companies
+                // First remove equities and then the companies
                 dbContext.Equities.RemoveRange(dbContext.Equities);
                 dbContext.Companies.RemoveRange(dbContext.Companies);
             }
             else if ("Companies".Equals(tableToDel))
             {
-                //Remove only those that don't have Equity stored in the Equitites table
+                // Remove only those that don't have Equity stored in the Equities table
                 dbContext.Companies.RemoveRange(dbContext.Companies
                                                          .Where(c => c.Equities.Count == 0)
                                                                       );
@@ -173,9 +173,9 @@ namespace MVCTemplate.Controllers
             Equity current = equities.Last();
             string dates = string.Join(",", equities.Select(e => e.date));
             string prices = string.Join(",", equities.Select(e => e.high));
-            string volumes = string.Join(",", equities.Select(e => e.volume / 1000000)); //Divide vol by million
+            string volumes = string.Join(",", equities.Select(e => e.volume / 1000000)); // Divide volume by million
             float avgprice = equities.Average(e => e.high);
-            double avgvol = equities.Average(e => e.volume) / 1000000; //Divide volume by million
+            double avgvol = equities.Average(e => e.volume) / 1000000; // Divide volume by million
             return new CompaniesEquities(companies, equities.Last(), dates, prices, volumes, avgprice, avgvol);
         }
 
