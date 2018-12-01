@@ -10,3 +10,15 @@ C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\R
 C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Fall_Assignment4_ActiveCloudSite-master\IEXTrading\obj\Release\netcoreapp2.0\IEXTrading.dll
 C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Fall_Assignment4_ActiveCloudSite-master\IEXTrading\obj\Release\netcoreapp2.0\IEXTrading.pdb
 C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Fall_Assignment4_ActiveCloudSite-master\IEXTrading\obj\Release\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\bin\Release\netcoreapp2.0\IEXTrading.deps.json
+C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\bin\Release\netcoreapp2.0\IEXTrading.runtimeconfig.json
+C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\bin\Release\netcoreapp2.0\IEXTrading.runtimeconfig.dev.json
+C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\bin\Release\netcoreapp2.0\IEXTrading.dll
+C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\bin\Release\netcoreapp2.0\IEXTrading.pdb
+C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\obj\Release\netcoreapp2.0\IEXTrading.csprojAssemblyReference.cache
+C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\obj\Release\netcoreapp2.0\IEXTrading.csproj.CoreCompileInputs.cache
+C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\obj\Release\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\obj\Release\netcoreapp2.0\IEXTrading.AssemblyInfoInputs.cache
+C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\obj\Release\netcoreapp2.0\IEXTrading.AssemblyInfo.cs
+C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\obj\Release\netcoreapp2.0\IEXTrading.dll
+C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\obj\Release\netcoreapp2.0\IEXTrading.pdb

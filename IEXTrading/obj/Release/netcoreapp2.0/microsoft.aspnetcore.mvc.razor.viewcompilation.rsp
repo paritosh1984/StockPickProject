@@ -1,13 +1,13 @@
-C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Fall_Assignment4_ActiveCloudSite-master\IEXTrading
+C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading
 --output-path=obj\Release\netcoreapp2.0\
 --application-name=IEXTrading
---content-root=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Fall_Assignment4_ActiveCloudSite-master\IEXTrading
---file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Fall_Assignment4_ActiveCloudSite-master\IEXTrading\Views\Home\Chart.cshtml
---file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Fall_Assignment4_ActiveCloudSite-master\IEXTrading\Views\Home\Index.cshtml
---file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Fall_Assignment4_ActiveCloudSite-master\IEXTrading\Views\Home\Refresh.cshtml
---file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Fall_Assignment4_ActiveCloudSite-master\IEXTrading\Views\Home\Symbols.cshtml
---file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Fall_Assignment4_ActiveCloudSite-master\IEXTrading\Views\Home\Try.cshtml
---file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Fall_Assignment4_ActiveCloudSite-master\IEXTrading\Views\Shared\_Layout.cshtml
---file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Fall_Assignment4_ActiveCloudSite-master\IEXTrading\Views\TopStocks\Index.cshtml
---file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Fall_Assignment4_ActiveCloudSite-master\IEXTrading\Views\_ViewImports.cshtml
---file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Fall_Assignment4_ActiveCloudSite-master\IEXTrading\Views\_ViewStart.cshtml
+--content-root=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading
+--file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\Views\Home\Chart.cshtml
+--file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\Views\Home\Index.cshtml
+--file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\Views\Home\Quote.cshtml
+--file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\Views\Home\Refresh.cshtml
+--file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\Views\Home\SelfReflection.cshtml
+--file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\Views\Home\Symbols.cshtml
+--file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\Views\Shared\_Layout.cshtml
+--file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\Views\_ViewImports.cshtml
+--file=C:\Users\umara\Google Drive\Coursework\6225 - Distributed Info System\Projects\Repos\2018_Project\StockPickProject\IEXTrading\Views\_ViewStart.cshtml

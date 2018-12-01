@@ -9,14 +9,14 @@
                 yAxisID: 'H',
                 data: prices.split(","),
                 type: 'line',
-                borderColor: 'rgba(0, 103, 71, 1)',
-                backgroundColor: 'rgba(0, 103, 71, 0.1)',
+                borderColor: 'red',
+                backgroundColor: 'rgba(3600, 100, 50, 0.05)',
                 lineTension: 0
             },
             {
                 label: 'Volumes (Mn)',
                 data: vols.split(","),
-                borderColor: 'rgba(0, 0, 250, 1)',
+                borderColor: 'rgb(128,128,128)',
                 borderWidth: 1
             }]
         },
@@ -38,10 +38,10 @@
                         mode: 'horizontal',
                         scaleID: 'H',
                         value: avgprice,
-                        borderColor: 'green',
+                        borderColor: 'red',
                         borderWidth: 1,
                         label: {
-                            backgroundColor: "green",
+                            backgroundColor: "red",
                             content: "Mean: $" + avgprice,
                             enabled: true
                         }
@@ -52,10 +52,10 @@
                         mode: 'horizontal',
                         scaleID: 'H',
                         value: avgvol,
-                        borderColor: 'blue',
+                        borderColor: 'black',
                         borderWidth: 1,
                         label: {
-                            backgroundColor: "blue",
+                            backgroundColor: "black",
                             content: "Mean Volume: " + avgvol + "(Mn)",
                             enabled: true
                         }

@@ -2,81 +2,107 @@
 @{
     ViewData["Title"] = "Charts";
 }
-<h2>Chart</h2>
-<hr />
-<form asp-controller="Home" asp-action="Chart" method="get">
-    <select name="symbol">
-        @foreach (var company in Model.Companies)
-        {
-            <option value=@company.symbol selected>@company.name</option>
-        }
-    </select>
-    <input type="submit" value="Get Chart" />
-</form>
-@if (Model.Current != null)
-{
-    var equity = Model.Current;
-    <hr />
-    <table>
-        <tbody>
-            <tr>
-                <td>
-                    Current Chart Data
-                    <table>
+
+<table cellspacing="0" style="margin-bottom:20px">
+    <tr>
+        <td width="16.66%" style="border-top-color: rgb(128,128,128);border-top-style:outset"></td>
+        <td width="16.66%" style="border-top-color: rgb(128,128,128);border-top-style:outset"></td>
+        <td width="16.66%" style="border-top-color: rgb(239,155,1);border-top-style:outset"></td>
+        <td width="16.66%" style="border-top-color: rgb(128,128,128);border-top-style:outset"></td>
+        <td width="16.66%" style="border-top-color: rgb(128,128,128);border-top-style:outset"></td>
+        <td width="16.66%" style="border-top-color: rgb(128,128,128);border-top-style:outset"></td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td><h2>Chart</h2></td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td>
+            <form asp-controller="Home" asp-action="Chart" method="get">
+                <select name="symbol">
+                    @foreach (var company in Model.Companies)
+                    {
+                        <option value=@company.symbol selected>@company.name</option>
+                    }
+                </select>
+                <input type="submit" value="Get Chart" />
+            </form>
+            @if (Model.Current != null)
+            {
+                var equity = Model.Current;
+                <hr />
+                <table border="1">
+                    <tbody>
                         <tr>
                             <td>
-                                Symbol
-                            </td>
-                            <td>
-                                @equity.symbol
+                                <div>
+                                    <canvas id="myChart" height="500" width="800"></canvas>
+                                </div>
                             </td>
                         </tr>
+
                         <tr>
-                            <td>
-                                Open
+                            <td width="40%">
+                                
+                                <table cellspacing="1" border="1">
+                                    <tr><td height="20px" style="border:none"></td></tr>
+                                    <tr><td style="font-weight:bolder;border:none">CURRENT CHART DATA</td></tr>
+                                    <tr>
+                                        <td>
+                                            Symbol
+                                        </td>
+                                        <td>
+                                            @equity.symbol
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Open
+                                        </td>
+                                        <td>
+                                            @equity.open
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            High
+                                        </td>
+                                        <td>
+                                            @equity.high
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Close
+                                        </td>
+                                        <td>
+                                            @equity.close
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            Volume
+                                        </td>
+                                        <td>
+                                            @equity.volume
+                                        </td>
+                                    </tr>
+                                </table>
                             </td>
-                            <td>
-                                @equity.open
-                            </td>
+
                         </tr>
-                        <tr>
-                            <td>
-                                High
-                            </td>
-                            <td>
-                                @equity.high
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Close
-                            </td>
-                            <td>
-                                @equity.close
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Volume
-                            </td>
-                            <td>
-                                @equity.volume
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-                <td>
-                    <div>
-                        <canvas id="myChart" height="500" width="800"></canvas>
-                    </div>
-                </td>
-                <td>
-                    <a asp-controller="Home" asp-action="SaveCharts" asp-route-symbol="@Model.Current.symbol"><img src="~/images/button_save-data.png" /></a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-}
+                    </tbody>
+                </table>
+            }
+        </td>
+    </tr>
+</table>
+
 <script>
     getChart("@Model.Dates", "@Model.Prices", "@Model.Volumes", @Model.AvgPrice, @Model.AvgVolume);
     alertDbSave(@ViewBag.dbSuccessChart);

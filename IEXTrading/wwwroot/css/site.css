@@ -1,7 +1,101 @@
 ﻿body {
-    background-color: whitesmoke;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: white;
+    font-family: 'Trebuchet MS';
     color: rgb(64,64,64);
+}
+
+table {
+    border: none;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table p{
+    text-align:justify;
+}
+
+/*Set table design for main site navigation hyperlinks*/
+.tblHyperlink {
+    
+}
+
+/*Set table cell design for main site navigation hyperlinks*/
+.tblHyperlink td{
+    width:10000;
+    align-content:center;
+    vertical-align:bottom;
+    /*border-bottom: 2px inset rgb(128,128,128);*/
+    vertical-align:baseline;
+    padding:10;
+}
+
+/*Set default cell content alignment for main site navigation hyperlinks*/
+.tblHyperlink td p{
+    align-content:center;
+    text-align:center;
+}
+
+/*Set default hyperlink style for main site navigation hyperlinks*/
+.tblHyperlink a{
+    letter-spacing:4;
+    text-decoration:none;
+}
+
+/*Set hyperlink color*/
+a:link {
+    color:rgb(128,128,128) ;
+    font-size:medium;
+}
+
+/*Set active hyperlink color*/
+a:active {
+    color: rgb(128,128,128);
+    font-size: medium;
+}
+
+/*Set visited hyperlink color*/
+a:visited {
+    color: rgb(128,128,128);
+    font-size: medium;
+}
+
+/*Set hyperlink hover color*/
+a:hover {
+    color: rgb(239,155,1);
+    text-decoration: none;
+    font-size: medium;
+}
+
+
+.umar {
+}
+
+    .umar ul {
+        list-style-type: square;
+        padding-left: 15;
+        margin-top: -12px;
+    }
+
+        .umar ul li {
+            text-align: left;
+        }
+
+            .umar ul li a {
+                text-decoration: none;
+                font-size: medium;
+            }
+
+
+    .umar img {
+        width: 100%;
+        height: auto;
+    }
+
+.setFont {
+    color: rgb(128,128,128);
+    text-align: justify;
+    font-size: medium
 }
 
 .nav-bar {
@@ -15,11 +109,3 @@
         color: inherit;
     }
 
-td {
-    padding: 10px;
-}
-
-table {
-    border-spacing: 10px;
-    border-collapse: separate;
-}

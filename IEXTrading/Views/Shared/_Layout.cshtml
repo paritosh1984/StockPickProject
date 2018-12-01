@@ -11,24 +11,81 @@
     <script type="text/javascript" src="~/js/site.js"></script>
 </head>
 <body>
-    <h1>DIS Workgroup 13</h1>
-    <nav>
-        <div class="nav-bar">
-            <a asp-area="" asp-controller="Home" asp-action="Index"> Home </a><text> | </text>
-            <a asp-area="" asp-controller="Home" asp-action="Symbols">Symbols </a><text> | </text>
-            <a asp-area="" asp-controller="Home" asp-action="Chart">Chart </a><text> | </text>
-            <a asp-area="" asp-controller="Home" asp-action="Refresh">Refresh </a><text> | </text>
-            <a asp-area="" asp-controller="Home" asp-action="Quote">Quotes</a><text> | </text>
-            <a asp-area="" asp-controller="Home" asp-action="SelfReflection">Self Reflection</a><text> | </text>
+    <div class="setFont">
+        <table style="margin-top:10px; margin-bottom:0px">
+            <!--<tr><td></td></tr>-->
+            <tr>
+                <!--Insert logo-->
+                <td valign="top">
+                    <p align="left">
+                        <a asp-area="" asp-controller="Home" asp-action="Index">
+                            <img src="images/logo.png" alt="DIS Workgroup 13" height="160" />
+                        </a>
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <div class="tblHyperlink">
+            <table cellspacing="0" >
+                <tr>
+                    <td width="16.66%">
+                        <p>
+                            <a asp-area="" asp-controller="Home" asp-action="Index">HOME</a>
+                        </p>
+                    </td>
+
+                    <td width="16.66%">
+                        <p>
+                            <a asp-area="" asp-controller="Home" asp-action="Symbols">SYMBOLS</a>
+                        </p>
+                    </td>
+
+                    <td width="16.66%">
+                        <p>
+                            <a asp-area="" asp-controller="Home" asp-action="Chart">CHART</a>
+                        </p>
+                    </td>
+
+                    <td width="16.66%">
+                        <p>
+                            <a asp-area="" asp-controller="Home" asp-action="Quote">QUOTES</a>
+                        </p>
+                    </td>
+
+                    <td width="16.66%">
+                        <p>
+                            <a asp-area="" asp-controller="Home" asp-action="Refresh">REFRESH</a>
+                        </p>
+                    </td>
+
+                    <td width="16.66%">
+                        <p>
+                            <a asp-area="" asp-controller="Home" asp-action="SelfReflection">SELF REFLECTION</a>
+                        </p>
+                    </td>
+                </tr>
+            </table>
         </div>
-    </nav>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>DIS Workgroup 13, BAIS, University of South Florida</p>
-        </footer>
+
+        <div class="container body-content">
+            @RenderBody()
+            <footer>
+                <table style="margin:0px>
+                    <tr">
+                        <td style="border-top: 1px outset rgb(128,128,128)">
+                            <p style="text-align:right">
+                                <font size="2">
+                                    Copyright ©
+                                    2018 DIS Workgroup 13. All rights reserved.
+                                </font>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </footer>
+        </div>
+        @RenderSection("Scripts", required: false)
     </div>
-    @RenderSection("Scripts", required: false)
 </body>
 </html>

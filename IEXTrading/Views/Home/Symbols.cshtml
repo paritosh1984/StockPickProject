@@ -2,45 +2,61 @@
     ViewData["Title"] = "Symbols";
 }
 
+<table cellspacing="0" style="margin-bottom:20px">
+    <tr>
+        <td width="16.66%" style="border-top-color: rgb(128,128,128);border-top-style:outset"></td>
+        <td width="16.66%" style="border-top-color: rgb(239,155,1);border-top-style:outset"></td>
+        <td width="16.66%" style="border-top-color: rgb(128,128,128);border-top-style:outset"></td>
+        <td width="16.66%" style="border-top-color: rgb(128,128,128);border-top-style:outset"></td>
+        <td width="16.66%" style="border-top-color: rgb(128,128,128);border-top-style:outset"></td>
+        <td width="16.66%" style="border-top-color: rgb(128,128,128);border-top-style:outset"></td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td><h2>Symbols</h2></td>
+    </tr>
+</table>
 @model IEnumerable<IEXTrading.Models.Company>
 
-<h2>Symbols</h2>
-<hr />
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Symbol
-            </th>
-            <th>
-                Name
-            </th>
-            <th>
-                Data Date
-            </th>
-        </tr>
-    </thead>
+<table>
+    <tr>
+        <th>
+            Symbol
+        </th>
+        <th>
+            Name
+        </th>
+        <th>
+            Data Date
+        </th>
+    </tr>
 
     <tbody>
 
         @foreach (var item in Model)
         {
+
             <tr>
-                <td>
+                <td width="25%">
                     @Html.DisplayFor(modelItem => item.symbol)
                 </td>
-                <td>
+                <td width="50%">
                     @Html.DisplayFor(modelItem => item.name)
                 </td>
-                <td>
+                <td width="25%">
                     @Html.DisplayFor(modelItem => item.date)
                 </td>
             </tr>
         }
+
+        <tr><td height="30px"></td></tr>
+
         <tr>
-            <td>
-                <a id="dbopt" asp-controller="Home" asp-action="PopulateSymbols"><img src="~/images/button_save-data.png" /></a>
+            <td colspan="3">
+                <a id="dbopt" asp-controller="Home" asp-action="PopulateSymbols">[ SAVE DATA ]</a>
             </td>
         </tr>
     </tbody>

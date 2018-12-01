@@ -2,17 +2,33 @@
     ViewData["Title"] = "Quote";
 }
 
-@model IEXTrading.Models.ViewModel.StockQuote
-<h2>Quotes</h2>
-<hr />
+<table cellspacing="0">
+    <tr>
+        <td width="16.66%" style="border-top-color: rgb(128,128,128);border-top-style:outset"></td>
+        <td width="16.66%" style="border-top-color: rgb(128,128,128);border-top-style:outset"></td>
+        <td width="16.66%" style="border-top-color: rgb(128,128,128);border-top-style:outset"></td>
+        <td width="16.66%" style="border-top-color: rgb(239,155,1);border-top-style:outset"></td>
+        <td width="16.66%" style="border-top-color: rgb(128,128,128);border-top-style:outset"></td>
+        <td width="16.66%" style="border-top-color: rgb(128,128,128);border-top-style:outset"></td>
+    </tr>
+</table>
 
-<table class="table">
+@model IEXTrading.Models.ViewModel.StockQuote
+
+<table>
+    <tr>
+        <td><h2>Quotes</h2></td>
+    </tr>
+</table>
+
+
+<table border="1">
     <thead>
         <tr>
-            <th>
+            <th width="10%">
                 Symbol
             </th>
-            <th>
+            <th width="20%">
                 Company Name
             </th>
             <th>
@@ -101,11 +117,6 @@
                 </td>
             </tr>
         }
-        <tr>
-            <td>
-                <a id="dbopt" asp-controller="Home" asp-action="PopulateSymbols"><img src="~/images/button_save-data.png" /></a>
-            </td>
-        </tr>
     </tbody>
 </table>
 <script>
